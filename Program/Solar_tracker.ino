@@ -142,11 +142,6 @@ int main(){
       count_to_deep_sleep++;
       if(count_to_deep_sleep == 4){
         count_to_deep_sleep = 0;
-
-        //Watch Dog Timer
-        WDTCSR = 24;  // change enable a WDE nastavujem naraz
-        WDTCSR = 33;  // 8s v power down mode
-        WDTCSR |= (1<<6);  // povol interupt mode
     
         //ADC prevodnik vypinam
         ADCSRA &= ~(1<<7);
